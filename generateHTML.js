@@ -94,3 +94,4 @@ const generateMana = (input) =>
 </html>`;
 
 
+module.exports = {generateMana, generateEng, generateInt, generateEmp};

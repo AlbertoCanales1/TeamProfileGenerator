@@ -1,18 +1,50 @@
-const generateHTML = require('generateHTML')
+const generateHTML = require('./generateHTML')
 const fs = require("fs");
 const inquirer = require('inquirer');
-const jest = require('jest');
+// const jest = require('jest');
 const employee = require('./lib/employee.js');
 const intern = require ('./lib/intern.js');
 const manager = require ('./lib/manager.js');
 const engineer = require ('./lib/engineer.js');
 const { start } = require('repl');
+// const { endianness } = require('os');
 const emplist = []
 const intlist = []
 const manalist = []
 const englist = []
 
-console.log(htmlgenerator)
+console.log(generateHTML)
+
+
+
+function start(){
+    inquirer.prompt({
+        type: 'list',
+        name: 'position',
+        message: 'which of these would you like to change?',
+        choices: ['employee', 'engineer', 'intern', 'manager', 'exit'],
+    })
+
+    .then(function (input){
+        if (input.position === 'employee'){
+            employeeq();
+ 
+        if (input.position === 'engineer'){
+            engineerq();
+        if (input.position === 'intern'){
+            internq();
+        if (input.position === 'manager'){
+            managerq();
+        if (input.position === 'exit'){
+            finish();
+        }
+        }
+        }
+        }
+        }
+    
+    })
+}
 
 
 
@@ -145,12 +177,90 @@ function writeToFile(input) {
 
 
 
-// Bonus using writeFileAsync as a promise
-const init = () => {
-  promptUser()
-    .then((input) => writeFileAsync('index.html', generateHTML(input)))
-    .then(() => console.log('Successfully wrote to index.html'))
-    .catch((err) => console.error(err));
+
+
+
+
+
+
+function finish(){
+    console.log(emplist)
+    console.log(englist)
+    console.log(intlist)
+    console.log(manalist)
+   
+    const empInputList = []
+    const engInputList = []
+    const intInputList = []
+    const manaInputList = []
+    const allInputList = []
+
+
+    emplist.forEach (function (input){
+        var empInput = generateHTML.generateEmp(input)
+
+        empInputList.push(empInput)
+    })
+    englist.forEach (function(input){
+        var engInput = generateHTML.generateEng(input)
+
+        engInputList.push(engInput)
+    })
+    intlist.forEach (function (input){
+        var intInput = generateHTML.generateInt(input)
+
+        intInputList.push(intInput)
+    })
+    manalist.forEach (function(input){
+        var manaInput = generateHTML.generateMana(input)
+
+        manaInputList.push(manaInput)
+    })
+
+var joinedEmpList = empInputList.join('')
+var joinedEngList = engInputList.join('')
+var joinedIntList = intInputList.join('')
+var joinedManaList = manaInputList.join('')
+
+allInputList.push(joinedEmpList, joinedEngList, joinedIntList, joinedManaList)
+
+console.log(allInputList.join(''))
+
+const generateTeamHTML = function (joinedAllInputList){
+    var joinedAllInputList = allInputList.join('')
+    return`
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+    `;
+
 };
 
-init();
+console.log(generateTeamHTML)
+
+fs.writeFileSync('./sample/index.hmtl', generateTeamHTML(), 'UTF8')
+
+}
+
+
+start();
+
+
+// // Bonus using writeFileAsync as a promise
+// const init = () => {
+//   promptUser()
+//     .then((input) => writeFileAsync('index.html', generateHTML(input)))
+//     .then(() => console.log('Successfully wrote to index.html'))
+//     .catch((err) => console.error(err));
+// };
+
+// init();
