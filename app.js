@@ -229,33 +229,31 @@ const generateTeamHTML = function (joinedAllInputList){
     var joinedAllInputList = allInputList.join('')
     return`
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <title>Team Profiles</title>
-    </head>
-    <body>
-
-    <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">${managerq.input.name}</h5>
-      <p class="card-text">${managerq.input.id}</p>
-      <p class="card-text">${managerq.input.email}</p>
-      <p class="card-text">${managerq.input.officenumber}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"> Name ${input.name}</h1>
+    <p class="lead"> ID ${input.id}.</p>
+    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
+    <ul class="list-group">
+      <li class="list-group-item">Email ${input.email}</li>
+      <li class="list-group-item">OfficeNumber${input.officenumber}</li>
+    </ul>
   </div>
-        
-    </body>
-    
-    `;
+</div>
+</body>
+</html>`;
 
 };
 
-console.log(generateTeamHTML)
+// console.log(generateTeamHTML)
 
 fs.writeFileSync('./sample/index.hmtl', generateTeamHTML(), 'UTF8')
 
