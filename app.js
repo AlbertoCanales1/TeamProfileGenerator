@@ -6,7 +6,7 @@ const employee = require('./lib/employee.js');
 const intern = require ('./lib/intern.js');
 const manager = require ('./lib/manager.js');
 const engineer = require ('./lib/engineer.js');
-const { start } = require('repl');
+// const { start } = require('repl');
 // const { endianness } = require('os');
 const emplist = []
 const intlist = []
@@ -252,7 +252,7 @@ fs.writeFileSync('./sample/index.hmtl', generateTeamHTML(), 'UTF8')
 }
 
 
-start();
+ start()
 
 
 // // Bonus using writeFileAsync as a promise
