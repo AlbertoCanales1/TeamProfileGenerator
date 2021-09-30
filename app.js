@@ -63,7 +63,7 @@ function employeeq(){
         },{
             type: 'input',
             name: 'email',
-            message: 'what is the employees id?',
+            message: 'what is the employees email?',
         },
     ])
     .then(function(input){
@@ -229,17 +229,28 @@ const generateTeamHTML = function (joinedAllInputList){
     var joinedAllInputList = allInputList.join('')
     return`
     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <title>Team Profiles</title>
+    </head>
+    <body>
+
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">${managerq.input.name}</h5>
+      <p class="card-text">${managerq.input.id}</p>
+      <p class="card-text">${managerq.input.email}</p>
+      <p class="card-text">${managerq.input.officenumber}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+        
+    </body>
     
-</body>
-</html>
     `;
 
 };
