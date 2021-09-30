@@ -225,37 +225,43 @@ allInputList.push(joinedEmpList, joinedEngList, joinedIntList, joinedManaList)
 
 console.log(allInputList.join(''))
 
-const generateTeamHTML = function (joinedAllInputList){
-    var joinedAllInputList = allInputList.join('')
-    return`
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4"> Name ${input.name}</h1>
-    <p class="lead"> ID ${input.id}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">Email ${input.email}</li>
-      <li class="list-group-item">OfficeNumber${input.officenumber}</li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
 
+const generateTeamHTML = function (joinedAllInputList) {
+    var joinedAllInputList = allInputList.join('')
+    return joinedAllInputList
 };
+
+// const generateTeamHTML = function (joinedAllInputList){
+//     var joinedAllInputList = allInputList.join('')
+//     return`
+//     <!DOCTYPE html>
+// <html lang="en">
+// <head>
+//   <meta charset="UTF-8">
+//   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+//   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+//   <title>Document</title>
+// </head>
+// <body>
+//   <div class="jumbotron jumbotron-fluid">
+//   <div class="container">
+//     <h1 class="display-4"> Name ${input.name}</h1>
+//     <p class="lead"> ID ${input.id}.</p>
+//     <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
+//     <ul class="list-group">
+//       <li class="list-group-item">Email ${input.email}</li>
+//       <li class="list-group-item">OfficeNumber${input.officenumber}</li>
+//     </ul>
+//   </div>
+// </div>
+// </body>
+// </html>`;
+
+// };
 
 // console.log(generateTeamHTML)
 
-fs.writeFileSync('./sample/index.hmtl', generateTeamHTML(), 'UTF8')
+fs.writeFileSync('./sample/index.html', generateTeamHTML(), 'UTF8')
 
 }
 
