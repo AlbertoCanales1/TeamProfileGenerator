@@ -28,21 +28,20 @@ function start(){
     .then(function (input){
         if (input.position === 'employee'){
             employeeq();
- 
+        }
         if (input.position === 'engineer'){
             engineerq();
+        }
         if (input.position === 'intern'){
             internq();
+        }
         if (input.position === 'manager'){
             managerq();
+        }
         if (input.position === 'exit'){
             finish();
         }
-        }
-        }
-        }
-        }
-    
+      
     })
 }
 
