@@ -14,3 +14,5 @@ To run this program npm install
 ```
 $ inquirer
 $ jest
+
+https://watch.screencastify.com/v/zzcUjGYmu2D0c5V7LHg8
