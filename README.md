@@ -17,4 +17,5 @@ $ jest
 
 ```
 
-![Untitled_ Sep 30, 2021 7_17 PM (1)](https://user-images.githubusercontent.com/81657151/135547873-73b94a72-a5d9-41a3-bc6c-f39592d4dd89.gif)
+
+![Untitled_ Sep 30, 2021 7_17 PM (3)](https://user-images.githubusercontent.com/81657151/135548148-be1220bb-0c1f-4869-adf2-fe38e51931a6.gif)
