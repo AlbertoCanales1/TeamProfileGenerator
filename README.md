@@ -15,4 +15,5 @@ To run this program npm install
 $ inquirer
 $ jest
 
-https://watch.screencastify.com/v/zzcUjGYmu2D0c5V7LHg8
+
+![Untitled_ Sep 30, 2021 7_17 PM (1)](https://user-images.githubusercontent.com/81657151/135547694-42921cb2-1cbf-4da8-9cc0-2682d0dfca4e.gif)
